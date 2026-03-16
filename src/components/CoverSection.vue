@@ -106,8 +106,6 @@
             <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
-
-        <p class="cover-scroll-hint">Scroll untuk melihat lebih</p>
       </div>
     </div>
   </Transition>
@@ -337,18 +335,6 @@ function open() { opened.value = true; emit('open') }
   border-color: rgba(184,150,90,.65);
   color: #e8c878;
   transform: translateY(-1px);
-}
-
-.cover-scroll-hint {
-  margin-top: 20px;
-  font-size: 9px; letter-spacing: .25em; text-transform: uppercase;
-  color: rgba(184,150,90,.22);
-  font-family: 'DM Sans', sans-serif;
-  animation: hint-float 2s ease-in-out infinite, body-in 1.4s .65s cubic-bezier(.22,1,.36,1) both;
-}
-@keyframes hint-float {
-  0%,100% { transform: translateY(0); opacity: .22; }
-  50%      { transform: translateY(4px); opacity: .4; }
 }
 
 .cover-fade-leave-active { transition: opacity .8s ease, transform .8s ease; }
