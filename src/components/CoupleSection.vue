@@ -99,7 +99,7 @@ defineProps({ groom: Object, bride: Object })
   pointer-events: none;
 }
 
-.couple-inner { max-width: var(--max-w); margin: 0 auto; }
+.couple-inner { max-width: var(--max-w); margin: 0 auto; text-align: center; }
 
 .section-label {
   display: flex; align-items: center; gap: 14px;

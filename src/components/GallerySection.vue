@@ -4,7 +4,7 @@
       <div class="section-label">
         <div class="label-line" /><span>Galeri Foto</span><div class="label-line" />
       </div>
-      <h2 class="display-title" style="color:var(--ivory)">Momen <em>Berharga</em></h2>
+      <h2 class="display-title" style="color:var(--ink)">Momen <em>Berharga</em></h2>
     </div>
 
     <div class="gallery-grid reveal reveal-delay-2">
@@ -20,9 +20,9 @@
         <div v-else class="g-empty" :style="{ background: bgs[i % bgs.length] }">
           <div class="empty-inner">
             <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
-              <rect x="3" y="7" width="26" height="19" rx="2" stroke="rgba(184,150,90,.25)" stroke-width="1"/>
-              <circle cx="11" cy="14" r="3" stroke="rgba(184,150,90,.25)" stroke-width="1"/>
-              <path d="M3 22l7-5 5 4 4-3 9 7" stroke="rgba(184,150,90,.25)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="3" y="7" width="26" height="19" rx="2" stroke="rgba(184,150,90,.4)" stroke-width="1"/>
+              <circle cx="11" cy="14" r="3" stroke="rgba(184,150,90,.4)" stroke-width="1"/>
+              <path d="M3 22l7-5 5 4 4-3 9 7" stroke="rgba(184,150,90,.4)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <span class="g-empty-text">Foto {{ i + 1 }}</span>
           </div>
@@ -88,12 +88,12 @@ const lbOpen = ref(false)
 const lbIdx  = ref(0)
 
 const bgs = [
-  'linear-gradient(145deg,#1a1610,#2a2018)',
-  'linear-gradient(145deg,#121a14,#1a2a1c)',
-  'linear-gradient(145deg,#1a1220,#281828)',
-  'linear-gradient(145deg,#121620,#181e2a)',
-  'linear-gradient(145deg,#1e1610,#2e2418)',
-  'linear-gradient(145deg,#141220,#201828)',
+  'linear-gradient(145deg,#ede5d8,#e0d4c0)',
+  'linear-gradient(145deg,#e8e0d2,#ddd4c2)',
+  'linear-gradient(145deg,#ece6da,#e2d8ca)',
+  'linear-gradient(145deg,#e6ddd0,#dcd0be)',
+  'linear-gradient(145deg,#ede8dc,#e4dace)',
+  'linear-gradient(145deg,#e8e2d6,#dfd6c6)',
 ]
 
 function cloudinary(url, idx) {
@@ -119,7 +119,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
 
 <style scoped>
 .gallery {
-  background: #0e0c09;
+  background: var(--ivory-2);
   padding-bottom: 0;
   position: relative;
 }
@@ -142,7 +142,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
 }
 .section-label span {
   font-size: 9px; letter-spacing: .3em; text-transform: uppercase;
-  color: rgba(184,150,90,.6); font-family: 'DM Sans', sans-serif;
+  color: var(--gold); font-family: 'DM Sans', sans-serif;
   white-space: nowrap;
 }
 
@@ -155,7 +155,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
 
 .g-cell {
   position: relative; overflow: hidden;
-  cursor: pointer; background: #1a1610;
+  cursor: pointer; background: var(--ivory-3);
   border: none; padding: 0; display: block;
   transition: opacity .3s;
 }
@@ -183,7 +183,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
 }
 .g-empty-text {
   font-size: 9px; letter-spacing: .2em; text-transform: uppercase;
-  color: rgba(184,150,90,.18);
+  color: rgba(184,150,90,.35);
   font-family: 'DM Sans', sans-serif;
 }
 
