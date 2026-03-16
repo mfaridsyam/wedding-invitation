@@ -85,6 +85,7 @@ const { rescan } = useReveal()
 
 function onOpen() {
   opened.value = true
+  document.body.classList.remove('cover-active')
   setTimeout(rescan, 300)
   if (bgm.value) {
     bgm.value.volume = 0.3
@@ -98,7 +99,10 @@ function toggleAudio() {
   else               { bgm.value.play().catch(() => {}); playing.value = true }
 }
 
-onMounted(() => { if (bgm.value) bgm.value.volume = 0.3 })
+onMounted(() => {
+  document.body.classList.add('cover-active')
+  if (bgm.value) bgm.value.volume = 0.3
+})
 </script>
 
 <style>
@@ -141,5 +145,9 @@ main.visible {
 @keyframes dot-pop {
   0%,80%,100% { opacity: .3; transform: scale(1); }
   40%          { opacity: 1;  transform: scale(1.4); }
+}
+:global(body.cover-active) {
+  overflow: hidden;
+  touch-action: none;
 }
 </style>
