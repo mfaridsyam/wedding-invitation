@@ -20,13 +20,6 @@
       </svg>
 
       <div class="cover-body">
-        <Transition name="guest-pop">
-          <div v-if="guest" class="cover-guest">
-            <span class="cover-guest-label">Kepada Yth.</span>
-            <span class="cover-guest-name">{{ guest }}</span>
-          </div>
-        </Transition>
-
         <p class="cover-script">The Wedding of</p>
 
         <h1 class="cover-names">
@@ -37,10 +30,17 @@
 
         <p class="cover-date">{{ date }}</p>
 
+        <Transition name="guest-pop">
+          <div v-if="guest" class="cover-guest">
+            <span class="cover-guest-label">Kepada Yth.</span>
+            <span class="cover-guest-name">{{ guest }}</span>
+          </div>
+        </Transition>
+
         <button class="cover-cta" @click="open">
           <span>Buka Undangan</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </button>
       </div>
@@ -85,7 +85,8 @@ function open() { opened.value = true; emit('open') }
 
 .cover-guest {
   display: flex; flex-direction: column; align-items: center;
-  margin-bottom: 28px;
+  margin-top: 28px;
+  margin-bottom: 0;
   padding: 14px 28px;
   border: 1px solid rgba(184,150,90,.2);
   border-radius: 4px;
