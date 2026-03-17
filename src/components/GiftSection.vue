@@ -87,7 +87,7 @@ const bankLogos = {
   BRI:  'https://res.cloudinary.com/dnacoymkh/image/upload/v1773730979/BRI_e4nwwh.png',
   BCA:  'https://res.cloudinary.com/dnacoymkh/image/upload/v1773730979/BCA_rp7ox3.png',
   BNI:  'https://res.cloudinary.com/dnacoymkh/image/upload/v1773730979/BNI_y6aogn.png',
-  BSI:  'https://res.cloudinary.com/dnacoymkh/image/upload/v1773730980/BSI_wfdvop.png',
+  BSI:  'https://res.cloudinary.com/dnacoymkh/image/upload/v1773734502/BSI_adqdd9.png',
   MANDIRI: 'https://res.cloudinary.com/dnacoymkh/image/upload/v1773732322/Mandiri_sgy2fc.png',
   DANA: 'https://res.cloudinary.com/dnacoymkh/image/upload/v1773730979/DANA_qlkkqs.png',
 }
