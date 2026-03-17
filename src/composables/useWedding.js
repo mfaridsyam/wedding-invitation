@@ -48,6 +48,9 @@ export function useWedding(slug) {
       dateDisplay: d.date_display || '',
       targetDate:  d.date_target  || '',
 
+      quote:       d.quote        || '',
+      quoteSource: d.quote_source || '',
+
       events: [
         {
           type:    'Akad Nikah',

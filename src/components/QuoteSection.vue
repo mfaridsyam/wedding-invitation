@@ -4,15 +4,26 @@
       <svg class="quote-mark" viewBox="0 0 40 32" fill="none">
         <path d="M0 32V20C0 13.3 2 8 6 4 10 0 15.3-1 22 1L20 7C16 5.7 13 6.3 11 9 9 11.7 8 15 8 19H16V32H0ZM24 32V20C24 13.3 26 8 30 4 34 0 39.3-1 46 1L44 7C40 5.7 37 6.3 35 9 33 11.7 32 15 32 19H40V32H24Z" fill="#B8965A" opacity=".15"/>
       </svg>
-      <p class="quote-text">
-        Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan
-        untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya,
-        dan Dia menjadikan di antaramu rasa kasih dan sayang.
-      </p>
-      <p class="quote-source">— QS. Ar-Rum : 21</p>
+      <p class="quote-text">{{ displayQuote }}</p>
+      <p class="quote-source">— {{ displaySource }}</p>
     </div>
   </section>
 </template>
+
+<script setup>
+import { computed } from 'vue'
+
+const props = defineProps({
+  quote:       { type: String, default: '' },
+  quoteSource: { type: String, default: '' },
+})
+
+const DEFAULT_QUOTE  = 'Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.'
+const DEFAULT_SOURCE = 'QS. Ar-Rum : 21'
+
+const displayQuote  = computed(() => props.quote  || DEFAULT_QUOTE)
+const displaySource = computed(() => props.quoteSource || DEFAULT_SOURCE)
+</script>
 
 <style scoped>
 .quote-section {

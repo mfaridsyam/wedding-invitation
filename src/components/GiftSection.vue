@@ -29,7 +29,16 @@
               </div>
               <div class="chip-glow" />
             </div>
-            <div class="card-bank-label">{{ gift.bank }}</div>
+            <div class="card-bank-logo-wrap">
+              <img
+                v-if="bankLogos[gift.bank]"
+                :src="bankLogos[gift.bank]"
+                :alt="gift.bank"
+                class="card-bank-logo"
+                draggable="false"
+              />
+              <div v-else class="card-bank-label">{{ gift.bank }}</div>
+            </div>
           </div>
 
           <div class="card-number-row">
@@ -70,8 +79,18 @@
 
 <script setup>
 import { ref } from 'vue'
+
 const props     = defineProps({ gifts: Array })
 const copiedIdx = ref(-1)
+
+const bankLogos = {
+  BRI:  'https://res.cloudinary.com/dnacoymkh/image/upload/v1773730979/BRI_e4nwwh.png',
+  BCA:  'https://res.cloudinary.com/dnacoymkh/image/upload/v1773730979/BCA_rp7ox3.png',
+  BNI:  'https://res.cloudinary.com/dnacoymkh/image/upload/v1773730979/BNI_y6aogn.png',
+  BSI:  'https://res.cloudinary.com/dnacoymkh/image/upload/v1773730980/BSI_wfdvop.png',
+  MANDIRI: 'https://res.cloudinary.com/dnacoymkh/image/upload/v1773732322/Mandiri_sgy2fc.png',
+  DANA: 'https://res.cloudinary.com/dnacoymkh/image/upload/v1773730979/DANA_qlkkqs.png',
+}
 
 function cardStyle(gift) {
   return { background: `linear-gradient(135deg, ${gift.color1} 0%, ${gift.color2} 100%)` }
@@ -170,6 +189,22 @@ async function copy(text, idx) {
   width: 12px; height: 8px;
   background: linear-gradient(135deg, rgba(255,255,255,.5), transparent);
   border-radius: 2px; pointer-events: none;
+}
+
+.card-bank-logo-wrap {
+  display: flex; align-items: center; justify-content: flex-end;
+}
+.card-bank-logo {
+  height: 28px;
+  width: auto;
+  max-width: 80px;
+  object-fit: contain;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  filter: brightness(0) invert(1);
+  opacity: .85;
 }
 
 .card-bank-label {

@@ -22,7 +22,7 @@
     <main :class="{ visible: opened }">
       <HeroSection       :groom="data.groom" :bride="data.bride" :date="data.dateDisplay" />
       <CountdownSection  :target-date="data.targetDate" />
-      <QuoteSection />
+      <QuoteSection      :quote="data.quote" :quote-source="data.quoteSource" />
       <CoupleSection     :groom="data.groom" :bride="data.bride" />
       <EventsSection     :events="data.events" />
       <GallerySection    :photos="data.photos" />

@@ -15,13 +15,15 @@
       </div>
 
       <div class="cd-grid reveal reveal-delay-1">
-        <div v-for="(item, i) in units" :key="i" class="cd-item">
-          <div class="cd-num-wrap">
-            <span class="cd-num">{{ pad(values[item.key]) }}</span>
+        <template v-for="(item, i) in units" :key="i">
+          <div class="cd-item">
+            <div class="cd-num-wrap">
+              <span class="cd-num">{{ pad(values[item.key]) }}</span>
+            </div>
+            <span class="cd-unit">{{ item.label }}</span>
           </div>
-          <div class="cd-sep" v-if="i < units.length - 1">:</div>
-          <span class="cd-unit">{{ item.label }}</span>
-        </div>
+          <div v-if="i < units.length - 1" class="cd-sep">:</div>
+        </template>
       </div>
 
       <div class="cd-divider reveal reveal-delay-2">
@@ -97,20 +99,17 @@ onUnmounted(() => clearInterval(timer))
 }
 
 .cd-grid {
-  display: flex; justify-content: center; align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   gap: 0;
 }
 
 .cd-item {
-  display: flex; flex-direction: column; align-items: center;
-  position: relative; padding: 0 clamp(12px, 4vw, 32px);
-}
-.cd-item:not(:last-child)::after {
-  content: ':';
-  position: absolute; right: -2px; top: 18px;
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 7vw, 48px); font-style: italic;
-  color: rgba(184,150,90,.25); line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 clamp(12px, 4vw, 32px);
 }
 
 .cd-num-wrap {
@@ -139,6 +138,20 @@ onUnmounted(() => clearInterval(timer))
 .cd-unit {
   font-size: 9px; letter-spacing: .28em; text-transform: uppercase;
   color: rgba(184,150,90,.5); font-family: 'DM Sans', sans-serif;
+  line-height: 1;
+  display: block;
+}
+
+.cd-sep {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 7vw, 48px);
+  font-style: italic;
+  color: rgba(184,150,90,.25);
+  line-height: 1;
+  padding-top: 8px;
+  align-self: flex-start;
+  margin-top: calc(clamp(44px, 11vw, 80px) * 0.1);
+  flex-shrink: 0;
 }
 
 .cd-divider {
