@@ -61,7 +61,7 @@ defineProps({ groom: Object, bride: Object, date: String })
 .hero-bismillah {
   font-family: var(--font-display);
   font-size: 28px; color: var(--gold-dark);
-  margin-bottom: 12px; /* Jarak rapat yang rapi */
+  margin-bottom: 12px;
   letter-spacing: .04em;
 }
 
@@ -75,10 +75,9 @@ defineProps({ groom: Object, bride: Object, date: String })
 
 .hero-names {
   font-family: var(--font-display);
-  /* Font diperbesar agar "WAH" */
   font-size: clamp(68px, 16vw, 120px);
   font-weight: 400; 
-  line-height: 0.8; /* Rapat & estetik */
+  line-height: 0.8;
   color: var(--ink); 
   margin: 0;
   display: flex; flex-direction: column; align-items: center;
@@ -90,7 +89,7 @@ defineProps({ groom: Object, bride: Object, date: String })
 
 .name-amp {
   display: block;
-  font-size: .32em; /* Ukuran asli & dikembalikan */
+  font-size: .32em;
   font-style: normal;
   color: var(--sage); 
   line-height: 1.4;
@@ -116,7 +115,4 @@ defineProps({ groom: Object, bride: Object, date: String })
   font-size: 12px; letter-spacing: .25em;
   text-transform: uppercase; color: var(--ink-muted);
 }
-
-/* Pastikan class reveal tetap bekerja jika didefinisikan secara global, 
-   atau tambahkan transisi di sini jika diperlukan */
 </style>
