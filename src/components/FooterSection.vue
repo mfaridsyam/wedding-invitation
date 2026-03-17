@@ -29,15 +29,18 @@
 
       <p class="footer-closing">
         Merupakan suatu kehormatan dan kebahagiaan bagi kami<br />
-        apabila Bapak / Ibu / Saudara/i berkenan hadir<br />
-        dan memberikan doa restu kepada kami.
+         apabila Bapak / Ibu / Saudara/i berkenan hadir<br />
+         dan memberikan doa restu kepada kami.
       </p>
 
       <p class="footer-salam">
         Wassalamu'alaikum Warahmatullahi Wabarakatuh
       </p>
 
-      <p class="footer-credit">Made with ♥ using Vue.js</p>
+      <p class="footer-credit">
+        &copy; 2026 Janji Suci &bull; Developed by 
+        <a href="https://mfaridsyam.vercel.app" target="_blank" rel="noopener">MFaridS</a>
+      </p>
     </div>
   </footer>
 </template>
@@ -120,8 +123,21 @@ defineProps({ groom: Object, bride: Object, date: String })
 }
 
 .footer-credit {
-  font-size: 10px; letter-spacing: .15em;
+  font-size: 10px;
+  letter-spacing: .15em;
   text-transform: uppercase;
   color: rgba(250,247,242,.12);
+}
+
+.footer-credit a {
+  color: rgba(184,150,90,.6);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.footer-credit a:hover {
+  color: var(--gold-light);
+  opacity: 1;
 }
 </style>
